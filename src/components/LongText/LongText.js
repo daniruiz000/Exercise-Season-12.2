@@ -8,7 +8,7 @@ const Longtext = ()=>{
 
     return (
         login.currentUserName ? 
-        <p style={{background:theme.background, color: theme.fontColor}}>{loremText[0]}</p>
+        <p style={{background:theme.background, color: theme.fontColor}}>{loremText}</p>
         : <p style={{background:theme.background, color: theme.fontColor}}> Acceso no permitido</p>
     )
 }

@@ -37,12 +37,13 @@ const Login = () => {
     }
 
     return (
-        
+
         <>
+            <h2>Login:</h2>
             <p>Usuario: {login.currentUserName}</p>
-            {login.currentUserName ? 
-                <button onClick={()=>login.updateUserInfo(null)}>Logout</button>
-                :<div>
+            {login.currentUserName ?
+                <button onClick={() => login.updateUserInfo(null)}>Logout</button>
+                : <div>
                     <form onSubmit={doLogin} className='login'>
                         <p><input ref={inputUser} type='text' placeholder='Nombre de usuario' /></p>
                         <p><input ref={inputPassword} type='password' placeholder='Contraseña' /></p>
