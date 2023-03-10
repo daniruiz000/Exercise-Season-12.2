@@ -49,28 +49,21 @@ function App() {
       <ThemeContext.Provider value={themeState}>
         <div className="app">
           <div className="app__control">
-            
             <Login />
-
             <h2>Temas:</h2>
             <p>Tema Actual: {themeState.name}</p>
             <button onClick={() => setThemeState(themeState === themes.ligth ? themes.dark : themes.ligth)}>Cambiar Tema</button>
-
           </div>
           <div className="app__elements">
             <h2>Componente Lazy:</h2>
             <React.Suspense fallback={<p>Cargando...</p>}>
               <LongTextLazy></LongTextLazy >
             </React.Suspense>
-
             <h2>Contadores:</h2>
             <Counter />
             <Counter />
-
             <h2>Peticiones a la API</h2>
-
             <ApisInfoGroup />
-
           </div>
         </div>
       </ThemeContext.Provider>

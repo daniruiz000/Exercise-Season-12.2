@@ -1,10 +1,11 @@
 import React from 'react';
 import './Login.css';
-import { LoginContext } from '../../App';
+import { LoginContext, ThemeContext } from '../../App';
 
 const Login = () => {
 
     const login = React.useContext(LoginContext)
+    const theme = React.useContext(ThemeContext)
 
     const [error, setError] = React.useState();
 
@@ -38,12 +39,12 @@ const Login = () => {
 
     return (
 
-        <>
+        <div>
             <h2>Login:</h2>
             <p>Usuario: {login.currentUserName}</p>
             {login.currentUserName ?
                 <button onClick={() => login.updateUserInfo(null)}>Logout</button>
-                : <div>
+                : <div style={{ background: theme.background, color: theme.fontColor }}>
                     <form onSubmit={doLogin} className='login'>
                         <p><input ref={inputUser} type='text' placeholder='Nombre de usuario' /></p>
                         <p><input ref={inputPassword} type='password' placeholder='Contraseña' /></p>
@@ -52,7 +53,7 @@ const Login = () => {
                     </form>
                 </div>
             }
-        </>
+        </div>
     )
 }
 
